@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar  6 16:32:31 2021
+
+@author: Renöö
+"""
+
+import time
+
+print("Q1")
+def f(string, n, c=0):
+    if c < n:
+        print(string * n)
+        f(string, n, c=c + 3)
+f('hello ', 3)
+
+print("\nQ2")
+def countdown(n):
+    print(n)
+    if 0 < n:
+        countdown(n - 1)
+countdown(10)
+
+print("\nQ3")
+def countup(n):
+    if n >= 10:
+        countup(n - 1)
+        print(n)
+countup(20)
+
+print("\nQ4")
+start2 = time.perf_counter()
+def power(x, y): 
+    res = 1
+    while (y > 0): 
+        if ((y & 1) == 1) : 
+            res = res * x 
+        y = y >> 1
+        x = x * x 
+    return res
+x = 3.5
+y = 5
+end2 = time.perf_counter()
+print("Q4 suoritus aika: ", end2 - start2)
+  
+print(power(x, y))
+
+print("\n")
+
+#Q5
+def poweri(x, n):
+    if n==0:
+        return 1
+    if n>=1:
+        return x * poweri(x, n-1)
+    
+#Q6
